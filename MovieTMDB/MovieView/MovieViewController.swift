@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendViewController: UIViewController {
+class MovieViewController: UIViewController {
     
     @IBOutlet var movieTableView: UITableView!
     
@@ -25,7 +25,7 @@ class TrendViewController: UIViewController {
 
 }
 
-extension TrendViewController {
+extension MovieViewController {
     
     private func setTableView() {
         
@@ -48,15 +48,14 @@ extension TrendViewController {
     
     private func callRequest() {
         
-        guard let url = URL(string: TMDBAPIManager.trendURL) else { return }
-        TMDBAPIManager().callRequest(url: url, completionHandler: { value in
+        TMDBAPIManager().movieCallRequest(url: TMDBAPIManager.APICase.trendMovieURL, completionHandler: { value in
             self.movieList = value
             print(self.movieList)
         })
     }
 }
 
-extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
+extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieList.count

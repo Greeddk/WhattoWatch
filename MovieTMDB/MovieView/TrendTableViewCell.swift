@@ -86,7 +86,7 @@ extension TrendTableViewCell {
         let genre = Genre.genreList.filter { $0.id == item.genre_ids[0] }
         genreLabel.text = "#\(genre[0].name)"
         
-        let url = URL(string: "https://image.tmdb.org/t/p/original/\(item.poster_path)")
+        let url = URL(string: "https://image.tmdb.org/t/p/original/\(item.backdrop_path)")
         posterImageView.kf.setImage(with: url)
         
         rateLabel.text = String(format: "%.1f", item.vote_average)

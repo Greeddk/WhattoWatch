@@ -14,6 +14,7 @@ struct MovieRank: Codable {
 
 struct Movie: Codable {
     var poster_path: String
+    var backdrop_path: String
     var title: String
     var release_date: String
     var overview: String

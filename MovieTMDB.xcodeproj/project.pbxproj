@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4218CC342B6A243D00828F38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC332B6A243D00828F38 /* BaseViewController.swift */; };
+		4218CC362B6A244C00828F38 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC352B6A244C00828F38 /* BaseTableViewCell.swift */; };
+		4218CC382B6A245700828F38 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC372B6A245700828F38 /* BaseCollectionViewCell.swift */; };
 		42826A852B627571004CC8F3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42826A842B627571004CC8F3 /* Kingfisher */; };
+		42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E5E2B6911E500D79600 /* CodeBase.swift */; };
+		42A06E632B69129A00D79600 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E622B69129A00D79600 /* MainTabBarViewController.swift */; };
+		42A06E652B6913EE00D79600 /* TVShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E642B6913EE00D79600 /* TVShowViewController.swift */; };
+		42A06E682B6917AB00D79600 /* TVShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E672B6917AB00D79600 /* TVShowCollectionViewCell.swift */; };
+		42A06E6B2B6918A600D79600 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42A06E6A2B6918A600D79600 /* SnapKit */; };
+		42A06E6D2B6918A600D79600 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 42A06E6C2B6918A600D79600 /* SnapKit-Dynamic */; };
+		42A06E6F2B69191400D79600 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E6E2B69191400D79600 /* UIView+Extension.swift */; };
+		42A06E732B6920B500D79600 /* TVShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E722B6920B500D79600 /* TVShowTableViewCell.swift */; };
+		42A06E752B69276E00D79600 /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E742B69276E00D79600 /* TVShow.swift */; };
 		42AE8FA02B624EA3008B0BD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE8F9F2B624EA3008B0BD3 /* AppDelegate.swift */; };
 		42AE8FA22B624EA3008B0BD3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE8FA12B624EA3008B0BD3 /* SceneDelegate.swift */; };
-		42AE8FA42B624EA3008B0BD3 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE8FA32B624EA3008B0BD3 /* TrendViewController.swift */; };
+		42AE8FA42B624EA3008B0BD3 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE8FA32B624EA3008B0BD3 /* MovieViewController.swift */; };
 		42AE8FA72B624EA3008B0BD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42AE8FA52B624EA3008B0BD3 /* Main.storyboard */; };
 		42AE8FA92B624EA5008B0BD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AE8FA82B624EA5008B0BD3 /* Assets.xcassets */; };
 		42AE8FAC2B624EA5008B0BD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42AE8FAA2B624EA5008B0BD3 /* LaunchScreen.storyboard */; };
@@ -26,10 +38,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4218CC332B6A243D00828F38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4218CC352B6A244C00828F38 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		4218CC372B6A245700828F38 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		42A06E5E2B6911E500D79600 /* CodeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBase.swift; sourceTree = "<group>"; };
+		42A06E622B69129A00D79600 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		42A06E642B6913EE00D79600 /* TVShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewController.swift; sourceTree = "<group>"; };
+		42A06E672B6917AB00D79600 /* TVShowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCollectionViewCell.swift; sourceTree = "<group>"; };
+		42A06E6E2B69191400D79600 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		42A06E722B6920B500D79600 /* TVShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowTableViewCell.swift; sourceTree = "<group>"; };
+		42A06E742B69276E00D79600 /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
 		42AE8F9C2B624EA3008B0BD3 /* MovieTMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AE8F9F2B624EA3008B0BD3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42AE8FA12B624EA3008B0BD3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		42AE8FA32B624EA3008B0BD3 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
+		42AE8FA32B624EA3008B0BD3 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		42AE8FA62B624EA3008B0BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42AE8FA82B624EA5008B0BD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42AE8FAB2B624EA5008B0BD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,19 +71,83 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A06E6B2B6918A600D79600 /* SnapKit in Frameworks */,
 				42826A852B627571004CC8F3 /* Kingfisher in Frameworks */,
 				42AE8FC72B625982008B0BD3 /* Alamofire in Frameworks */,
+				42A06E6D2B6918A600D79600 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4218CC2E2B6A16D400828F38 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4218CC332B6A243D00828F38 /* BaseViewController.swift */,
+				4218CC352B6A244C00828F38 /* BaseTableViewCell.swift */,
+				4218CC372B6A245700828F38 /* BaseCollectionViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		42A06E5B2B6910D000D79600 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42AE8FC32B625611008B0BD3 /* Movie.swift */,
+				42A06E742B69276E00D79600 /* TVShow.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		42A06E5C2B6911BC00D79600 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				42AE8FBF2B6252B3008B0BD3 /* APIKey.swift */,
+				42AE8FB92B625161008B0BD3 /* TMDBAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		42A06E5D2B6911D000D79600 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				42AE8FC82B625CC5008B0BD3 /* ReusableProtocol.swift */,
+				42A06E5E2B6911E500D79600 /* CodeBase.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		42A06E602B69123000D79600 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				42A06E6E2B69191400D79600 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		42A06E612B69124900D79600 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				42AE8FC12B6254F8008B0BD3 /* UserDefaultsManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		42A06E662B69157700D79600 /* TVShowView */ = {
+			isa = PBXGroup;
+			children = (
+				42A06E642B6913EE00D79600 /* TVShowViewController.swift */,
+				42A06E722B6920B500D79600 /* TVShowTableViewCell.swift */,
+				42A06E672B6917AB00D79600 /* TVShowCollectionViewCell.swift */,
+			);
+			path = TVShowView;
+			sourceTree = "<group>";
+		};
 		42AE8F932B624EA3008B0BD3 = {
 			isa = PBXGroup;
 			children = (
 				42AE8FBD2B6252A0008B0BD3 /* .gitignore */,
-				42AE8FBF2B6252B3008B0BD3 /* APIKey.swift */,
 				42AE8F9E2B624EA3008B0BD3 /* MovieTMDB */,
 				42AE8F9D2B624EA3008B0BD3 /* Products */,
 			);
@@ -78,30 +164,34 @@
 		42AE8F9E2B624EA3008B0BD3 /* MovieTMDB */ = {
 			isa = PBXGroup;
 			children = (
+				4218CC2E2B6A16D400828F38 /* Base */,
+				42A06E612B69124900D79600 /* Data */,
+				42A06E5B2B6910D000D79600 /* Model */,
+				42A06E5D2B6911D000D79600 /* Protocol */,
+				42A06E602B69123000D79600 /* Extension */,
+				42A06E5C2B6911BC00D79600 /* Network */,
+				42A06E662B69157700D79600 /* TVShowView */,
 				42AE8F9F2B624EA3008B0BD3 /* AppDelegate.swift */,
 				42AE8FA12B624EA3008B0BD3 /* SceneDelegate.swift */,
 				42AE8FA52B624EA3008B0BD3 /* Main.storyboard */,
-				42AE8FB32B624FA7008B0BD3 /* TrendView */,
+				42A06E622B69129A00D79600 /* MainTabBarViewController.swift */,
+				42AE8FB32B624FA7008B0BD3 /* MovieView */,
 				42AE8FB42B624FC0008B0BD3 /* CreditView */,
 				42AE8FA82B624EA5008B0BD3 /* Assets.xcassets */,
 				42AE8FAA2B624EA5008B0BD3 /* LaunchScreen.storyboard */,
 				42AE8FAD2B624EA5008B0BD3 /* Info.plist */,
-				42AE8FB92B625161008B0BD3 /* TMDBAPIManager.swift */,
-				42AE8FC12B6254F8008B0BD3 /* UserDefaultsManager.swift */,
-				42AE8FC32B625611008B0BD3 /* Movie.swift */,
-				42AE8FC82B625CC5008B0BD3 /* ReusableProtocol.swift */,
 			);
 			path = MovieTMDB;
 			sourceTree = "<group>";
 		};
-		42AE8FB32B624FA7008B0BD3 /* TrendView */ = {
+		42AE8FB32B624FA7008B0BD3 /* MovieView */ = {
 			isa = PBXGroup;
 			children = (
-				42AE8FA32B624EA3008B0BD3 /* TrendViewController.swift */,
+				42AE8FA32B624EA3008B0BD3 /* MovieViewController.swift */,
 				42AE8FB52B624FE3008B0BD3 /* TrendTableViewCell.swift */,
 				42AE8FB62B624FE3008B0BD3 /* TrendTableViewCell.xib */,
 			);
-			path = TrendView;
+			path = MovieView;
 			sourceTree = "<group>";
 		};
 		42AE8FB42B624FC0008B0BD3 /* CreditView */ = {
@@ -130,6 +220,8 @@
 			packageProductDependencies = (
 				42AE8FC62B625982008B0BD3 /* Alamofire */,
 				42826A842B627571004CC8F3 /* Kingfisher */,
+				42A06E6A2B6918A600D79600 /* SnapKit */,
+				42A06E6C2B6918A600D79600 /* SnapKit-Dynamic */,
 			);
 			productName = MovieTMDB;
 			productReference = 42AE8F9C2B624EA3008B0BD3 /* MovieTMDB.app */;
@@ -162,6 +254,7 @@
 			packageReferences = (
 				42AE8FC52B625982008B0BD3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				42826A832B627571004CC8F3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				42A06E692B6918A600D79600 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 42AE8F9D2B624EA3008B0BD3 /* Products */;
 			projectDirPath = "";
@@ -192,15 +285,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42AE8FA42B624EA3008B0BD3 /* TrendViewController.swift in Sources */,
+				42AE8FA42B624EA3008B0BD3 /* MovieViewController.swift in Sources */,
+				42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */,
+				42A06E752B69276E00D79600 /* TVShow.swift in Sources */,
 				42AE8FA02B624EA3008B0BD3 /* AppDelegate.swift in Sources */,
+				4218CC362B6A244C00828F38 /* BaseTableViewCell.swift in Sources */,
+				42A06E682B6917AB00D79600 /* TVShowCollectionViewCell.swift in Sources */,
+				42A06E632B69129A00D79600 /* MainTabBarViewController.swift in Sources */,
 				42AE8FC92B625CC5008B0BD3 /* ReusableProtocol.swift in Sources */,
+				4218CC342B6A243D00828F38 /* BaseViewController.swift in Sources */,
 				42AE8FA22B624EA3008B0BD3 /* SceneDelegate.swift in Sources */,
+				4218CC382B6A245700828F38 /* BaseCollectionViewCell.swift in Sources */,
+				42A06E732B6920B500D79600 /* TVShowTableViewCell.swift in Sources */,
 				42AE8FC22B6254F8008B0BD3 /* UserDefaultsManager.swift in Sources */,
+				42A06E6F2B69191400D79600 /* UIView+Extension.swift in Sources */,
 				42AE8FBA2B625161008B0BD3 /* TMDBAPIManager.swift in Sources */,
 				42AE8FC02B6252B3008B0BD3 /* APIKey.swift in Sources */,
 				42AE8FC42B625611008B0BD3 /* Movie.swift in Sources */,
 				42AE8FB72B624FE3008B0BD3 /* TrendTableViewCell.swift in Sources */,
+				42A06E652B6913EE00D79600 /* TVShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +544,14 @@
 				minimumVersion = 7.10.2;
 			};
 		};
+		42A06E692B6918A600D79600 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
 		42AE8FC52B625982008B0BD3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -456,6 +567,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 42826A832B627571004CC8F3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		42A06E6A2B6918A600D79600 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42A06E692B6918A600D79600 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		42A06E6C2B6918A600D79600 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42A06E692B6918A600D79600 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
 		42AE8FC62B625982008B0BD3 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

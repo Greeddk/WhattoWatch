@@ -11,7 +11,7 @@ protocol ReusableProtocol {
     static var identifier: String { get }
 }
 
-extension UITableViewCell: ReusableProtocol {
+extension UIView: ReusableProtocol {
     
     static var identifier: String {
         return String(describing: self)
