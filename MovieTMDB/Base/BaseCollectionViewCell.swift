@@ -11,7 +11,7 @@ class BaseCollectionViewCell: UICollectionViewCell, CodeBase {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        contentView.backgroundColor = .backColor
         configureHierarchy()
         configureView()
         configureLayout()

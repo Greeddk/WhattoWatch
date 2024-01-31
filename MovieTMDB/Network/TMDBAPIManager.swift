@@ -53,5 +53,20 @@ class TMDBAPIManager {
         }
     }
     
+    func tvShowLogoCallRequest(url: String, completionHandler: @escaping (ShowImage) -> Void) {
+        
+        guard let url = URL(string: baseURL + url) else { return }
+        
+        AF.request(url, headers: header).responseDecodable(of: ShowImage.self) { response in
+            switch response.result {
+            case .success(let success):
+                completionHandler(success)
+                
+            case .failure(let failure):
+                print("통신 오류", failure)
+            }
+        }
+    }
+    
     
 }

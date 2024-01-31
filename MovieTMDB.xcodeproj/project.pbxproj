@@ -10,6 +10,8 @@
 		4218CC342B6A243D00828F38 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC332B6A243D00828F38 /* BaseViewController.swift */; };
 		4218CC362B6A244C00828F38 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC352B6A244C00828F38 /* BaseTableViewCell.swift */; };
 		4218CC382B6A245700828F38 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC372B6A245700828F38 /* BaseCollectionViewCell.swift */; };
+		4218CC3C2B6A331B00828F38 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC3B2B6A331B00828F38 /* UIColor+Extension.swift */; };
+		4218CC412B6A381200828F38 /* RoundLogoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC402B6A381200828F38 /* RoundLogoCollectionViewCell.swift */; };
 		42826A852B627571004CC8F3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42826A842B627571004CC8F3 /* Kingfisher */; };
 		42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E5E2B6911E500D79600 /* CodeBase.swift */; };
 		42A06E632B69129A00D79600 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E622B69129A00D79600 /* MainTabBarViewController.swift */; };
@@ -41,6 +43,8 @@
 		4218CC332B6A243D00828F38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4218CC352B6A244C00828F38 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		4218CC372B6A245700828F38 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		4218CC3B2B6A331B00828F38 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4218CC402B6A381200828F38 /* RoundLogoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLogoCollectionViewCell.swift; sourceTree = "<group>"; };
 		42A06E5E2B6911E500D79600 /* CodeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBase.swift; sourceTree = "<group>"; };
 		42A06E622B69129A00D79600 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		42A06E642B6913EE00D79600 /* TVShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				42A06E6E2B69191400D79600 /* UIView+Extension.swift */,
+				4218CC3B2B6A331B00828F38 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				42A06E642B6913EE00D79600 /* TVShowViewController.swift */,
 				42A06E722B6920B500D79600 /* TVShowTableViewCell.swift */,
 				42A06E672B6917AB00D79600 /* TVShowCollectionViewCell.swift */,
+				4218CC402B6A381200828F38 /* RoundLogoCollectionViewCell.swift */,
 			);
 			path = TVShowView;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 				42AE8FA22B624EA3008B0BD3 /* SceneDelegate.swift in Sources */,
 				4218CC382B6A245700828F38 /* BaseCollectionViewCell.swift in Sources */,
 				42A06E732B6920B500D79600 /* TVShowTableViewCell.swift in Sources */,
+				4218CC412B6A381200828F38 /* RoundLogoCollectionViewCell.swift in Sources */,
 				42AE8FC22B6254F8008B0BD3 /* UserDefaultsManager.swift in Sources */,
 				42A06E6F2B69191400D79600 /* UIView+Extension.swift in Sources */,
 				42AE8FBA2B625161008B0BD3 /* TMDBAPIManager.swift in Sources */,
@@ -304,6 +311,7 @@
 				42AE8FC42B625611008B0BD3 /* Movie.swift in Sources */,
 				42AE8FB72B624FE3008B0BD3 /* TrendTableViewCell.swift in Sources */,
 				42A06E652B6913EE00D79600 /* TVShowViewController.swift in Sources */,
+				4218CC3C2B6A331B00828F38 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

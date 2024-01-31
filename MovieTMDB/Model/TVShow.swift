@@ -18,3 +18,15 @@ struct TVShow: Decodable {
     let poster_path: String?
 }
 
+struct ShowImage: Decodable {
+    let id: Int
+    let logos: [ShowLogo]
+}
+
+struct ShowLogo: Decodable {
+    let logo: String
+    
+    enum CodingKeys: String, CodingKey {
+        case logo = "file_path"
+    }
+}

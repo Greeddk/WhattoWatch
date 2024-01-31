@@ -12,19 +12,20 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let homeVC = UINavigationController(rootViewController: TVShowViewController())
-        let trendVC = UINavigationController(rootViewController: MovieViewController())
+        let TVShowVC = UINavigationController(rootViewController: TVShowViewController())
+        let MovieVC = UINavigationController(rootViewController: MovieViewController())
         
-        homeVC.tabBarItem.image = UIImage(systemName: "play.tv")
-        trendVC.tabBarItem.image = UIImage(systemName: "movieclapper")
+        TVShowVC.tabBarItem.image = UIImage(systemName: "play.tv")
+        MovieVC.tabBarItem.image = UIImage(systemName: "movieclapper")
         
-        homeVC.title = "TV"
-        trendVC.title = "영화"
+        TVShowVC.title = "TV"
+        MovieVC.title = "영화"
         
+        tabBar.barTintColor = .black //탭바 스크롤 할때 이게 없으면 흰색이 나옴
         tabBar.unselectedItemTintColor = .systemGray
-        tabBar.barTintColor = .black
-        
-        setViewControllers([homeVC, trendVC], animated: true)
+        tabBar.backgroundColor = .black
+
+        setViewControllers([TVShowVC, MovieVC], animated: true)
     }
 
 }

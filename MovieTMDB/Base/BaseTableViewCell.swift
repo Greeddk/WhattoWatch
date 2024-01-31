@@ -11,6 +11,7 @@ class BaseTableViewCell: UITableViewCell, CodeBase {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .backColor
         configureHierarchy()
         configureView()
         configureLayout()

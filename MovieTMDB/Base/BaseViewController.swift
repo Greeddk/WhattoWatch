@@ -11,7 +11,7 @@ class BaseViewController: UIViewController, CodeBase {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .backColor
         configureHierarchy()
         configureView()
         configureLayout()

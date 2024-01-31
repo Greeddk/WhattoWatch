@@ -28,22 +28,20 @@ class TVShowTableViewCell: BaseTableViewCell {
     }
     
     override func configureView() {
-        backgroundColor = .black
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .backColor
         sectionLabel.textColor = .white
-        sectionLabel.font = .systemFont(ofSize: 14)
-        sectionLabel.text = "text1"
+        sectionLabel.font = .boldSystemFont(ofSize: 16)
     }
     
     override func configureLayout() {
         sectionLabel.snp.makeConstraints { make in
-//            make.top.greaterThanOrEqualTo(contentView)
             make.horizontalEdges.top.equalTo(contentView.safeAreaLayoutGuide)
         }
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(sectionLabel.snp.bottom)
-            make.horizontalEdges.bottom.equalTo(contentView.safeAreaLayoutGuide)
+            make.horizontalEdges.equalTo(contentView.safeAreaLayoutGuide)
+            make.bottom.equalTo(contentView).offset(-16)
         }
     }
     
@@ -60,8 +58,8 @@ extension TVShowTableViewCell {
         
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
-        layout.itemSize = CGSize(width: cellWidth / 3, height: cellHeight / 4 - 20)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+        layout.itemSize = CGSize(width: cellWidth / 3, height: cellHeight / 4 )
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         layout.scrollDirection = .horizontal
         
         return layout
