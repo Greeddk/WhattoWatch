@@ -30,3 +30,24 @@ struct ShowLogo: Decodable {
         case logo = "file_path"
     }
 }
+
+struct TVSeriesInfo: Decodable {
+    let backdrop_path: String
+    let poster_path: String
+    let name: String
+    let overview: String
+}
+
+struct CastingInfo: Decodable {
+    let cast: [Actor]
+}
+
+struct Actor: Decodable {
+    let name: String
+    let profile_path: String
+    let roles: [Role]
+}
+
+struct Role: Decodable {
+    let character: String
+}

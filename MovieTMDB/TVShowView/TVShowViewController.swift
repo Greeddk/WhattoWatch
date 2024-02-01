@@ -92,7 +92,6 @@ extension TVShowViewController {
         
         group.notify(queue: .main) {
             self.tableView.reloadData()
-            print(self.showLogo)
         }
         
     }
@@ -122,6 +121,14 @@ extension TVShowViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row != 0 {
+            return UIScreen.main.bounds.height / 4 + 20
+        } else {
+            return 180
+        }
+    }
+    
 }
 
 extension TVShowViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -143,8 +150,7 @@ extension TVShowViewController: UICollectionViewDataSource, UICollectionViewDele
             cell.roundImage.kf.setImage(with: url)
             
             guard let logo = showLogo[item.id] else { return cell }
-            print(logo)
-            let logoImage = "https://image.tmdb.org/t/p/w500\(logo)"
+            let logoImage = "https://image.tmdb.org/t/p/w154\(logo)"
             let logoURL = URL(string: logoImage)
             cell.logoImage.kf.setImage(with: logoURL)
             
@@ -164,11 +170,11 @@ extension TVShowViewController: UICollectionViewDataSource, UICollectionViewDele
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row != 0 {
-            return UIScreen.main.bounds.height / 4 + 20
-        } else {
-            return 180
-        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.id = showList[collectionView.tag][indexPath.item].id
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
+
 }

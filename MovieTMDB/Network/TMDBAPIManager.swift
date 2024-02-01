@@ -68,5 +68,34 @@ class TMDBAPIManager {
         }
     }
     
+    func tvSeriesDetailCallRequest(url: String, completionHandler: @escaping (TVSeriesInfo) -> Void ) {
+        
+        guard let url = URL(string: baseURL + url) else { return }
+        
+        AF.request(url, headers: header).responseDecodable(of: TVSeriesInfo.self) { response in
+            switch response.result {
+            case .success(let success):
+                print(success)
+                completionHandler(success)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
+    
+    func castingCallRequest(url: String, completionHandler: @escaping (CastingInfo) -> Void ) {
+        
+        guard let url = URL(string: baseURL + url) else { return }
+        
+        AF.request(url, headers: header).responseDecodable(of: CastingInfo.self) { response in
+            switch response.result {
+            case .success(let success):
+                print(success)
+                completionHandler(success)
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
     
 }
