@@ -23,7 +23,7 @@ class TVShowViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
         callAPI()
     }
     
@@ -122,10 +122,10 @@ extension TVShowViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row != 0 {
-            return UIScreen.main.bounds.height / 4 + 20
-        } else {
+        if indexPath.row == 0 {
             return 180
+        } else {
+            return 240
         }
     }
     
@@ -171,8 +171,10 @@ extension TVShowViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let vc = DetailViewController()
         vc.id = showList[collectionView.tag][indexPath.item].id
+        vc.tableView.reloadData()
         
         navigationController?.pushViewController(vc, animated: true)
     }

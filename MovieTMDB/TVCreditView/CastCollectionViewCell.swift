@@ -1,21 +1,26 @@
 //
-//  CastTableViewCell.swift
+//  CastCollectionViewCell.swift
 //  MovieTMDB
 //
-//  Created by Greed on 1/31/24.
+//  Created by Greed on 2/2/24.
 //
 
 import UIKit
 import SnapKit
 
-class CastTableViewCell: BaseTableViewCell {
-    
+class CastCollectionViewCell: BaseCollectionViewCell {
+
     let actorImage = UIImageView()
     let nameLabel = UILabel()
     let roleNameLabel = UILabel()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    override func layoutSubviews() {
+        actorImage.clipsToBounds = true
+        actorImage.layer.cornerRadius = actorImage.frame.width / 2
     }
     
     required init?(coder: NSCoder) {
@@ -28,28 +33,28 @@ class CastTableViewCell: BaseTableViewCell {
     
     override func configureLayout() {
         actorImage.snp.makeConstraints { make in
-            make.leading.equalTo(contentView).offset(8)
-            make.centerY.equalTo(contentView)
+            make.top.equalTo(contentView).offset(4)
+            make.centerX.equalTo(contentView)
+            make.size.equalTo(120)
         }
         
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(contentView.frame.height / 3)
-            make.leading.equalTo(actorImage.snp.trailing).offset(16)
+            make.top.equalTo(actorImage.snp.bottom).offset(2)
+            make.centerX.equalTo(contentView)
         }
         
         roleNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(8)
-            make.leading.equalTo(nameLabel.snp.leading)
+            make.top.equalTo(nameLabel.snp.bottom).offset(2)
+            make.centerX.equalTo(contentView)
         }
     }
     
     override func configureView() {
-        actorImage.layer.cornerRadius = 8
-        
+        contentView.backgroundColor = .clear
         nameLabel.font = .systemFont(ofSize: 16)
         nameLabel.textColor = .white
         roleNameLabel.font = .systemFont(ofSize: 13)
         roleNameLabel.textColor = .lightGray
     }
-
+    
 }

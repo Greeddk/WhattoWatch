@@ -44,7 +44,7 @@ struct CastingInfo: Decodable {
 
 struct Actor: Decodable {
     let name: String
-    let profile_path: String
+    let profile_path: String?
     let roles: [Role]
 }
 

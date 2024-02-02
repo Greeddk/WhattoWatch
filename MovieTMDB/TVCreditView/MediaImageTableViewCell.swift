@@ -27,22 +27,28 @@ class MediaImageTableViewCell: BaseTableViewCell {
     }
     
     override func configureView() {
+        backImageView.image = UIImage(systemName: "pencil")
+        backImageView.alpha = 0.4
+        poster.image = UIImage(systemName: "person")
+        poster.contentMode = .scaleAspectFill
         mediaName.font = .boldSystemFont(ofSize: 20)
         mediaName.textColor = .white
     }
     
     override func configureLayout() {
         backImageView.snp.makeConstraints { make in
-            make.edges.equalTo(contentView)
+            make.edges.equalTo(contentView.safeAreaLayoutGuide)
         }
         
         mediaName.snp.makeConstraints { make in
-            make.top.leading.equalTo(backImageView.snp.top).offset(20)
+            make.top.leading.equalTo(contentView).offset(12)
         }
         
         poster.snp.makeConstraints { make in
             make.top.equalTo(mediaName.snp.bottom).offset(8)
-            make.leading.equalTo(mediaName)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(20)
+            make.width.equalTo(110)
+            make.height.equalTo(180)
         }
     }
 

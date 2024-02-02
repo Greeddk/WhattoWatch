@@ -13,14 +13,19 @@ class TMDBAPIManager {
     static let shared = TMDBAPIManager()
     let header: HTTPHeaders = ["Authorization": APIKey.tmdb]
     let baseURL = "https://api.themoviedb.org/3"
+    let imageBaseURL = "https://image.tmdb.org/t/p/w500"
+    
+    static var id: Int = 0
     
     enum APICase {
         static let topRatedTVURL = "/tv/top_rated?language=ko-KR"
         static let trendTVURL = "/trending/tv/week?language=ko-KR"
         static let popularTVURL = "/tv/popular"
-        
+        static var seriesDetailURL = "/tv/\(id)?language=ko-KR"
+        static var creditTVURL = "/tv/\(id)/aggregate_credits"
+        static var recommendTVURL = "/tv/\(id)/recommendations?language=ko-KR"
         static let trendMovieURL = "/trending/movie/week?language=ko-KR"
-        static var creditURL = "/movie/{movie_id}/credits"
+        static var creditMovieURL = "/movie/\(id)/credits"
     }
     
     func movieCallRequest(url: String, completionHandler: @escaping ([Movie]) -> Void) {
@@ -75,7 +80,6 @@ class TMDBAPIManager {
         AF.request(url, headers: header).responseDecodable(of: TVSeriesInfo.self) { response in
             switch response.result {
             case .success(let success):
-                print(success)
                 completionHandler(success)
             case .failure(let failure):
                 print(failure)
@@ -90,7 +94,6 @@ class TMDBAPIManager {
         AF.request(url, headers: header).responseDecodable(of: CastingInfo.self) { response in
             switch response.result {
             case .success(let success):
-                print(success)
                 completionHandler(success)
             case .failure(let failure):
                 print(failure)

@@ -13,8 +13,8 @@ class BaseTableViewCell: UITableViewCell, CodeBase {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .backColor
         configureHierarchy()
-        configureView()
         configureLayout()
+        configureView()
     }
     
     required init?(coder: NSCoder) {
