@@ -29,6 +29,11 @@ struct ShowLogo: Decodable {
     enum CodingKeys: String, CodingKey {
         case logo = "file_path"
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.logo = try container.decodeIfPresent(String.self, forKey: .logo) ?? ""
+    }
 }
 
 struct TVSeriesInfo: Decodable {

@@ -18,11 +18,6 @@ class CastCollectionViewCell: BaseCollectionViewCell {
         super.init(frame: frame)
     }
     
-    override func layoutSubviews() {
-        actorImage.clipsToBounds = true
-        actorImage.layer.cornerRadius = actorImage.frame.width / 2
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -50,9 +45,12 @@ class CastCollectionViewCell: BaseCollectionViewCell {
     }
     
     override func configureView() {
-        nameLabel.font = .systemFont(ofSize: 16)
+        actorImage.backgroundColor = .white
+        actorImage.clipsToBounds = true
+        actorImage.layer.cornerRadius = 65
+        nameLabel.font = .systemFont(ofSize: 14)
         nameLabel.textColor = .white
-        roleNameLabel.font = .systemFont(ofSize: 13)
+        roleNameLabel.font = .systemFont(ofSize: 11)
         roleNameLabel.textColor = .lightGray
     }
     

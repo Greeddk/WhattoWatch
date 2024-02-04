@@ -16,6 +16,8 @@
 		4218CC452B6A61D000828F38 /* MediaImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC442B6A61D000828F38 /* MediaImageTableViewCell.swift */; };
 		4218CC472B6A61DD00828F38 /* MediaOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC462B6A61DD00828F38 /* MediaOverviewTableViewCell.swift */; };
 		4218CC492B6A620B00828F38 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218CC482B6A620B00828F38 /* CastTableViewCell.swift */; };
+		425200292B6F63B4009B6370 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425200282B6F63B4009B6370 /* BaseView.swift */; };
+		4252002B2B6F6466009B6370 /* DetailBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252002A2B6F6466009B6370 /* DetailBaseView.swift */; };
 		42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E5E2B6911E500D79600 /* CodeBase.swift */; };
 		42A06E632B69129A00D79600 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E622B69129A00D79600 /* MainTabBarViewController.swift */; };
 		42A06E652B6913EE00D79600 /* TVShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E642B6913EE00D79600 /* TVShowViewController.swift */; };
@@ -38,7 +40,6 @@
 		42AE8FC42B625611008B0BD3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE8FC32B625611008B0BD3 /* Movie.swift */; };
 		42AE8FC92B625CC5008B0BD3 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE8FC82B625CC5008B0BD3 /* ReusableProtocol.swift */; };
 		42DE6E2C2B6D34D80047A2AE /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE6E2B2B6D34D80047A2AE /* CastCollectionViewCell.swift */; };
-		42DE6E2E2B6DF4B50047A2AE /* MediaInfoBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE6E2D2B6DF4B50047A2AE /* MediaInfoBaseView.swift */; };
 		42DE6E302B6F4C160047A2AE /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE6E2F2B6F4C160047A2AE /* TMDBAPI.swift */; };
 		42DE6E332B6F5FC30047A2AE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42DE6E322B6F5FC30047A2AE /* SnapKit */; };
 		42DE6E352B6F5FC30047A2AE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 42DE6E342B6F5FC30047A2AE /* SnapKit-Dynamic */; };
@@ -56,6 +57,8 @@
 		4218CC442B6A61D000828F38 /* MediaImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImageTableViewCell.swift; sourceTree = "<group>"; };
 		4218CC462B6A61DD00828F38 /* MediaOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		4218CC482B6A620B00828F38 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
+		425200282B6F63B4009B6370 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		4252002A2B6F6466009B6370 /* DetailBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBaseView.swift; sourceTree = "<group>"; };
 		42A06E5E2B6911E500D79600 /* CodeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBase.swift; sourceTree = "<group>"; };
 		42A06E622B69129A00D79600 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		42A06E642B6913EE00D79600 /* TVShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +83,6 @@
 		42AE8FC32B625611008B0BD3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		42AE8FC82B625CC5008B0BD3 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		42DE6E2B2B6D34D80047A2AE /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
-		42DE6E2D2B6DF4B50047A2AE /* MediaInfoBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaInfoBaseView.swift; sourceTree = "<group>"; };
 		42DE6E2F2B6F4C160047A2AE /* TMDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +107,7 @@
 				4218CC332B6A243D00828F38 /* BaseViewController.swift */,
 				4218CC352B6A244C00828F38 /* BaseTableViewCell.swift */,
 				4218CC372B6A245700828F38 /* BaseCollectionViewCell.swift */,
-				42DE6E2D2B6DF4B50047A2AE /* MediaInfoBaseView.swift */,
+				425200282B6F63B4009B6370 /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				4218CC422B6A609900828F38 /* DetailViewController.swift */,
+				4252002A2B6F6466009B6370 /* DetailBaseView.swift */,
 				4218CC442B6A61D000828F38 /* MediaImageTableViewCell.swift */,
 				4218CC462B6A61DD00828F38 /* MediaOverviewTableViewCell.swift */,
 				4218CC482B6A620B00828F38 /* CastTableViewCell.swift */,
@@ -312,10 +315,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425200292B6F63B4009B6370 /* BaseView.swift in Sources */,
 				42AE8FA42B624EA3008B0BD3 /* MovieViewController.swift in Sources */,
 				42DE6E2C2B6D34D80047A2AE /* CastCollectionViewCell.swift in Sources */,
 				42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */,
-				42DE6E2E2B6DF4B50047A2AE /* MediaInfoBaseView.swift in Sources */,
 				42A06E752B69276E00D79600 /* TVShow.swift in Sources */,
 				42DE6E302B6F4C160047A2AE /* TMDBAPI.swift in Sources */,
 				42AE8FA02B624EA3008B0BD3 /* AppDelegate.swift in Sources */,
@@ -337,6 +340,7 @@
 				42AE8FC02B6252B3008B0BD3 /* APIKey.swift in Sources */,
 				42AE8FC42B625611008B0BD3 /* Movie.swift in Sources */,
 				42AE8FB72B624FE3008B0BD3 /* TrendTableViewCell.swift in Sources */,
+				4252002B2B6F6466009B6370 /* DetailBaseView.swift in Sources */,
 				42A06E652B6913EE00D79600 /* TVShowViewController.swift in Sources */,
 				4218CC3C2B6A331B00828F38 /* UIColor+Extension.swift in Sources */,
 				4218CC452B6A61D000828F38 /* MediaImageTableViewCell.swift in Sources */,

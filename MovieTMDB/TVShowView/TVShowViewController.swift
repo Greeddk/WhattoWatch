@@ -23,7 +23,7 @@ class TVShowViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.navigationController?.isNavigationBarHidden = true
+        //        self.navigationController?.isNavigationBarHidden = true
         callAPI()
     }
     
@@ -51,17 +51,26 @@ extension TVShowViewController {
     func callAPI() {
         
         let group = DispatchGroup()
+        let imageGroup = DispatchGroup()
         
         group.enter()
+        imageGroup.enter()
         apiManager.request(type: TVRank.self, api: .tvTopRatedURL) { show in
             self.showList[0] = show.results
+            group.leave()
+            imageGroup.leave()
+        }
+        
+        
+        imageGroup.notify(queue: .main) {
             self.showList[0].forEach {
+                group.enter()
                 let id = $0.id
-                self.apiManager.request(type: ShowLogo.self, api: .tvLogoURL(id: id)) { show in
-                    self.showLogo[id] = show.logo
+                self.apiManager.request(type: ShowImage.self, api: .tvLogoURL(id: id)) { show in
+                    self.showLogo[id] = show.logos.first?.logo
+                    group.leave()
                 }
             }
-            group.leave()
         }
         
         group.enter()
@@ -162,5 +171,5 @@ extension TVShowViewController: UICollectionViewDataSource, UICollectionViewDele
         
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
 }

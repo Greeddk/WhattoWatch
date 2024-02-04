@@ -33,7 +33,7 @@ class CastTableViewCell: BaseTableViewCell {
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(title.snp.bottom).offset(4)
-            make.horizontalEdges.bottom.equalTo(contentView)
+            make.leading.trailing.bottom.equalTo(contentView)
         }
     }
     
