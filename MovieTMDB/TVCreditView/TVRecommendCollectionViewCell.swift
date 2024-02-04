@@ -1,19 +1,20 @@
 //
-//  TrendTableViewCell.swift
+//  TVRecommendCollectionViewCell.swift
 //  MovieTMDB
 //
-//  Created by Greed on 1/25/24.
+//  Created by Greed on 2/4/24.
 //
 
 import UIKit
-import Kingfisher
+import SnapKit
 
-class TrendTableViewCell: BaseTableViewCell {
+class TVRecommendCollectionViewCell: BaseCollectionViewCell {
     
     let view = MediaCardView()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -29,6 +30,5 @@ class TrendTableViewCell: BaseTableViewCell {
             make.edges.equalTo(contentView)
         }
     }
-  
+    
 }
-

@@ -14,8 +14,14 @@ struct TVRank: Decodable {
 
 struct TVShow: Decodable {
     let id: Int
-    let name: String
+    let backdrop_path: String?
     let poster_path: String?
+    let name: String
+    let first_air_date: String
+    let original_name: String
+    let overview: String?
+    let vote_average: Double
+//    let genres: [Genre]
 }
 
 

@@ -11,8 +11,8 @@ class BaseView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureHierarchy()
-        configureLayout()
         configureView()
+        configureLayout()
     }
     
     required init?(coder: NSCoder) {

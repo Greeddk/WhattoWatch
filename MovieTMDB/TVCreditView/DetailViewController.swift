@@ -18,7 +18,7 @@ class DetailViewController: BaseViewController {
     var id: Int = 0
     var seriesInfo = TVSeriesInfo(backdrop_path: "", poster_path: "", name: "", original_name: "", overview: "", first_air_date: "", last_air_date: "", vote_average: 0, genres: [], number_of_episodes: 0, number_of_seasons: 0)
     var actorInfo = [Actor(name: "", profile_path: "", roles: [])]
-    var recommendList = [TVShow(id: 0, name: "", poster_path: "")]
+    var recommendList: [TVShow] = []
     
     override func loadView() {
         self.view = mainView
@@ -35,6 +35,7 @@ class DetailViewController: BaseViewController {
         mainView.tableView.register(MediaImageTableViewCell.self, forCellReuseIdentifier: MediaImageTableViewCell.identifier)
         mainView.tableView.register(MediaOverviewTableViewCell.self, forCellReuseIdentifier: MediaOverviewTableViewCell.identifier)
         mainView.tableView.register(CastTableViewCell.self, forCellReuseIdentifier: CastTableViewCell.identifier)
+        mainView.tableView.register(TVRecommendTableViewCell.self, forCellReuseIdentifier: TVRecommendTableViewCell.identifier)
         mainView.tableView.backgroundColor = .clear
         mainView.tableView.estimatedRowHeight = 240
     }
@@ -55,15 +56,14 @@ class DetailViewController: BaseViewController {
             group.leave()
         }
         
-//        group.enter()
-//        apiManager.request(type: TVShow.self, api: .recommendTVURL(id: id)) { show in
-//            self.recommendList = show.
-//            group.leave()
-//        }
+        group.enter()
+        apiManager.request(type: TVRank.self, api: .tvRecommendURL(id: id)) { show in
+            self.recommendList = show.results
+            group.leave()
+        }
         
         group.notify(queue: .main) {
             self.mainView.tableView.reloadData()
-            
         }
         
     }
@@ -73,7 +73,7 @@ class DetailViewController: BaseViewController {
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,11 +103,20 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.overviewLabel.text = "줄거리가 없습니다!"
             }
             return cell
-        } else {
+        } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as! CastTableViewCell
             cell.collectionView.delegate = self
             cell.collectionView.dataSource = self
             cell.collectionView.register(CastCollectionViewCell.self, forCellWithReuseIdentifier: CastCollectionViewCell.identifier)
+            cell.collectionView.tag = indexPath.row
+            cell.collectionView.backgroundColor = .clear
+            cell.collectionView.reloadData()
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TVRecommendTableViewCell.identifier, for: indexPath) as! TVRecommendTableViewCell
+            cell.collectionView.dataSource = self
+            cell.collectionView.delegate = self
+            cell.collectionView.register(TVRecommendCollectionViewCell.self, forCellWithReuseIdentifier: TVRecommendCollectionViewCell.identifier)
             cell.collectionView.tag = indexPath.row
             cell.collectionView.backgroundColor = .clear
             cell.collectionView.reloadData()
@@ -135,33 +144,56 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else if indexPath.row == 2 {
             return 220
+        } else {
+            return 420
         }
-        return 44
     }
 }
 
 extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return actorInfo.count
+        if collectionView.tag == 2 {
+            return actorInfo.count
+        } else {
+            return recommendList.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CastCollectionViewCell.identifier, for: indexPath) as! CastCollectionViewCell
-        
-        let item = actorInfo[indexPath.item]
-        if let url = item.profile_path {
-            let url = TMDBAPI.imageURL(imageURL: url).endpoint
-            cell.actorImage.kf.setImage(with: url)
+        if collectionView.tag == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CastCollectionViewCell.identifier, for: indexPath) as! CastCollectionViewCell
+            
+            let item = actorInfo[indexPath.item]
+            if let url = item.profile_path {
+                let url = TMDBAPI.imageURL(imageURL: url).endpoint
+                cell.actorImage.kf.setImage(with: url)
+            } else {
+                cell.actorImage.image = UIImage(systemName: "person")
+            }
+            cell.nameLabel.text = item.name
+            cell.roleNameLabel.text = item.roles.first?.character
+            
+            return cell
         } else {
-            cell.actorImage.image = UIImage(systemName: "person")
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TVRecommendCollectionViewCell.identifier, for: indexPath) as! TVRecommendCollectionViewCell
+            
+            let item = recommendList[indexPath.item]
+            cell.view.configureCell(item: item)
+            cell.view.genreLabel.text = ""
+            cell.view.releasedateLabel.text = ""
+            
+            return cell
         }
-        cell.nameLabel.text = item.name
-        cell.roleNameLabel.text = item.roles.first?.character
-        
-        return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let vc = DetailViewController()
+        vc.id = recommendList[indexPath.item].id
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

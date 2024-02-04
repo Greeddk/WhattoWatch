@@ -7,44 +7,45 @@
 
 import UIKit
 
-class MovieViewController: UIViewController {
+class MovieViewController: BaseViewController {
     
-    @IBOutlet var movieTableView: UITableView!
+    let tableView = UITableView()
     
     var movieList: [Movie] = [] {
         didSet {
-            movieTableView.reloadData()
+            tableView.reloadData()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func configureHierarchy() {
+        view.addSubview(tableView)
+    }
+    
+    override func configureLayout() {
+        tableView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+    }
+    
+    override func configureView() {
+        callRequest()
         
-        setTableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.rowHeight = 380
+        tableView.separatorStyle = .none
+        
+        tableView.register(TrendTableViewCell.self, forCellReuseIdentifier: TrendTableViewCell.identifier)
     }
 
 }
 
 extension MovieViewController {
-    
-    private func setTableView() {
-        
-        callRequest()
-        
-        movieTableView.delegate = self
-        movieTableView.dataSource = self
-        
-        movieTableView.rowHeight = UIScreen.main.bounds.height / 2
-        movieTableView.separatorStyle = .none
-        
-        let xib = UINib(nibName: TrendTableViewCell.identifier, bundle: nil)
-        movieTableView.register(xib, forCellReuseIdentifier: TrendTableViewCell.identifier)
-    }
-    
-    private func setUI() {
-        
-        
-    }
     
     private func callRequest() {
         TMDBAPIManager.shared.request(type: MovieRank.self, api: .movieTrendURL) { movie in
@@ -64,7 +65,7 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TrendTableViewCell.identifier, for: indexPath) as! TrendTableViewCell
         
-        cell.configureCell(item: movieList[indexPath.row])
+        cell.view.configureCell(item: movieList[indexPath.row])
         
         return cell
     }
