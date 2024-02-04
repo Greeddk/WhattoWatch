@@ -11,7 +11,7 @@ import SnapKit
 class CastTableViewCell: BaseTableViewCell {
     
     let title = UILabel()
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -38,15 +38,15 @@ class CastTableViewCell: BaseTableViewCell {
     }
     
     override func configureView() {
-        backgroundColor = .clear
         title.text = "배우"
         title.textColor = .white
         title.font = .boldSystemFont(ofSize: 16)
+        collectionView.backgroundColor = .backColor
     }
     
-    func collectionViewLayout() -> UICollectionViewLayout {
+    static func collectionViewLayout() -> UICollectionViewLayout {
         
-        let spacing: CGFloat = 10
+        let spacing: CGFloat = 5
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing

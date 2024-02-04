@@ -24,7 +24,7 @@ struct ShowImage: Decodable {
 }
 
 struct ShowLogo: Decodable {
-    let logo: String
+    let logo: String?
     
     enum CodingKeys: String, CodingKey {
         case logo = "file_path"
@@ -32,7 +32,7 @@ struct ShowLogo: Decodable {
 }
 
 struct TVSeriesInfo: Decodable {
-    let backdrop_path: String
+    let backdrop_path: String?
     let poster_path: String
     let name: String
     let overview: String

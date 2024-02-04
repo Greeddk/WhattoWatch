@@ -102,7 +102,7 @@ extension TrendTableViewCell {
         let origin = originFormatter.date(from: text)!
         
         let targetFormatter = DateFormatter()
-        targetFormatter.dateFormat = "dd/MM/yyyy"
+        targetFormatter.dateFormat = "yyyy/dd/MM"
         let result = targetFormatter.string(from: origin)
         
         return result

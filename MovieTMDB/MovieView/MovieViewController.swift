@@ -47,11 +47,10 @@ extension MovieViewController {
     }
     
     private func callRequest() {
-        
-        TMDBAPIManager().movieCallRequest(url: TMDBAPIManager.APICase.trendMovieURL, completionHandler: { value in
-            self.movieList = value
-            print(self.movieList)
-        })
+        TMDBAPIManager.shared.request(type: MovieRank.self, api: .movieTrendURL) { movie in
+            self.movieList = movie.results
+        }
+
     }
 }
 

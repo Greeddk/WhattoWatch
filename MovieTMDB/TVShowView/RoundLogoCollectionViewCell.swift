@@ -10,11 +10,7 @@ import SnapKit
 
 class RoundLogoCollectionViewCell: BaseCollectionViewCell {
     
-    let roundImage: UIImageView = {
-        let view = UIImageView()
-        view.layer.cornerRadius = view.frame.width / 2
-        return view
-    }()
+    let roundImage = UIImageView()
     let logoImage = UIImageView()
     
     override init(frame: CGRect) {

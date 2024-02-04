@@ -51,43 +51,29 @@ extension TVShowViewController {
     func callAPI() {
         
         let group = DispatchGroup()
-        let roundLogoGroup = DispatchGroup()
         
-        roundLogoGroup.enter()
-        DispatchQueue.global().async(group: roundLogoGroup) {
-            self.apiManager.tvShowCallRequest(url: TMDBAPIManager.APICase.topRatedTVURL) { show in
-                self.showList[0] = show
-                roundLogoGroup.leave()
-            }
-        }
-        
-        roundLogoGroup.notify(queue: .main) {
+        group.enter()
+        apiManager.request(type: TVRank.self, api: .tvTopRatedURL) { show in
+            self.showList[0] = show.results
             self.showList[0].forEach {
                 let id = $0.id
-                let logoURL = "/tv/\(id)/images"
-                self.apiManager.tvShowLogoCallRequest(url: logoURL) { show in
-                    let url = show.logos[0].logo
-                    self.showLogo[id] = url
-                    
+                self.apiManager.request(type: ShowLogo.self, api: .tvLogoURL(id: id)) { show in
+                    self.showLogo[id] = show.logo
                 }
             }
-            
+            group.leave()
         }
         
         group.enter()
-        DispatchQueue.global().async(group: group) {
-            self.apiManager.tvShowCallRequest(url: TMDBAPIManager.APICase.popularTVURL) { show in
-                self.showList[1] = show
-                group.leave()
-            }
+        apiManager.request(type: TVRank.self, api: .tvPopularURL) { show in
+            self.showList[1] = show.results
+            group.leave()
         }
         
         group.enter()
-        DispatchQueue.global().async(group: group) {
-            self.apiManager.tvShowCallRequest(url: TMDBAPIManager.APICase.trendTVURL) { show in
-                self.showList[2] = show
-                group.leave()
-            }
+        apiManager.request(type: TVRank.self, api: .tvTrendURL) { show in
+            self.showList[2] = show.results
+            group.leave()
         }
         
         group.notify(queue: .main) {
@@ -171,10 +157,8 @@ extension TVShowViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let vc = DetailViewController()
         vc.id = showList[collectionView.tag][indexPath.item].id
-        vc.tableView.reloadData()
         
         navigationController?.pushViewController(vc, animated: true)
     }

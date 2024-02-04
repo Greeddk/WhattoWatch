@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-// TODO: autoDimension 적용하기 버튼 누르면 line = , 다시 누르면 2
+
 class MediaOverviewTableViewCell: BaseTableViewCell {
 
     let title = UILabel()
@@ -31,8 +31,7 @@ class MediaOverviewTableViewCell: BaseTableViewCell {
         }
         overviewLabel.snp.makeConstraints { make in
             make.top.equalTo(title.snp.bottom).offset(8)
-            make.leading.equalTo(contentView).offset(20)
-            make.trailing.equalTo(contentView.safeAreaLayoutGuide).offset(-20)
+            make.horizontalEdges.equalTo(contentView).inset(20)
         }
     }
     

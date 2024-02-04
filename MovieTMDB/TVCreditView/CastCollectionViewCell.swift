@@ -34,8 +34,8 @@ class CastCollectionViewCell: BaseCollectionViewCell {
     override func configureLayout() {
         actorImage.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(4)
-            make.centerX.equalTo(contentView)
-            make.size.equalTo(120)
+            make.horizontalEdges.equalTo(contentView)
+            make.size.equalTo(130)
         }
         
         nameLabel.snp.makeConstraints { make in
@@ -50,7 +50,6 @@ class CastCollectionViewCell: BaseCollectionViewCell {
     }
     
     override func configureView() {
-        contentView.backgroundColor = .clear
         nameLabel.font = .systemFont(ofSize: 16)
         nameLabel.textColor = .white
         roleNameLabel.font = .systemFont(ofSize: 13)

@@ -37,7 +37,8 @@ class MediaImageTableViewCell: BaseTableViewCell {
     
     override func configureLayout() {
         backImageView.snp.makeConstraints { make in
-            make.edges.equalTo(contentView.safeAreaLayoutGuide)
+            make.width.equalTo(contentView)
+            make.height.equalTo(240)
         }
         
         mediaName.snp.makeConstraints { make in

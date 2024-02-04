@@ -16,18 +16,13 @@ class DetailViewController: BaseViewController {
     let tableView = UITableView()
     var id: Int = 0
     
-    var seriesInfo = TVSeriesInfo(backdrop_path: "", poster_path: "", name: "", overview: "") {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    var seriesInfo = TVSeriesInfo(backdrop_path: "", poster_path: "", name: "", overview: "")
     var actorInfo = [Actor(name: "", profile_path: "", roles: [])]
     var recommendList = [TVShow(id: 0, name: "", poster_path: nil)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(id)
-        callAPI(id: id)
+        callAPI()
     }
 
     override func configureHierarchy() {
@@ -41,6 +36,7 @@ class DetailViewController: BaseViewController {
         tableView.register(MediaOverviewTableViewCell.self, forCellReuseIdentifier: MediaOverviewTableViewCell.identifier)
         tableView.register(CastTableViewCell.self, forCellReuseIdentifier: CastTableViewCell.identifier)
         tableView.backgroundColor = .clear
+//        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func configureLayout() {
@@ -49,39 +45,30 @@ class DetailViewController: BaseViewController {
         }
     }
     
-    func callAPI(id: Int) {
+    func callAPI() {
         
         let group = DispatchGroup()
-        
-        TMDBAPIManager.id = self.id
-        
+
         group.enter()
-        DispatchQueue.global().async(group: group) {
-            self.apiManager.tvSeriesDetailCallRequest(url: TMDBAPIManager.APICase.seriesDetailURL ) { series in
-                self.seriesInfo = series
-                group.leave()
-            }
+        apiManager.request(type: TVSeriesInfo.self, api: .tvSeriesDetailURL(id: id)) { series in
+            self.seriesInfo = series
+            group.leave()
         }
         
         group.enter()
-        DispatchQueue.global().async(group: group) {
-            self.apiManager.castingCallRequest(url: TMDBAPIManager.APICase.creditTVURL) { actor in
-                self.actorInfo = actor.cast
-                group.leave()
-            }
+        apiManager.request(type: CastingInfo.self, api: .tvCreditURL(id: id)) { [self] actors in
+            actorInfo = actors.cast
+            group.leave()
         }
         
-        group.enter()
-        DispatchQueue.global().async(group: group) {
-            self.apiManager.tvShowCallRequest(url: TMDBAPIManager.APICase.recommendTVURL) { show in
-                self.recommendList = show
-                group.leave()
-            }
-        }
+//        group.enter()
+//        apiManager.request(type: TVShow.self, api: .recommendTVURL(id: id)) { show in
+//            self.recommendList = show.
+//            group.leave()
+//        }
         
         group.notify(queue: .main) {
             self.tableView.reloadData()
-            print(self.actorInfo)
         }
         
     }
@@ -90,23 +77,25 @@ class DetailViewController: BaseViewController {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MediaImageTableViewCell.identifier, for: indexPath) as! MediaImageTableViewCell
-            let baseURL = apiManager.imageBaseURL
-            cell.backImageView.kf.setImage(with: URL(string: baseURL + seriesInfo.backdrop_path))
-            cell.poster.kf.setImage(with: URL(string: baseURL + seriesInfo.poster_path))
+            cell.backImageView.kf.setImage(with: TMDBAPI.imageURL(imageURL: seriesInfo.backdrop_path ?? "").endpoint)
+            cell.poster.kf.setImage(with: TMDBAPI.imageURL(imageURL: seriesInfo.poster_path).endpoint)
             cell.mediaName.text = seriesInfo.name
             
             return cell
-        } else if indexPath.row == 1 {
+        } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MediaOverviewTableViewCell.identifier, for: indexPath) as! MediaOverviewTableViewCell
-            
             cell.overviewLabel.text = seriesInfo.overview
             return cell
         } else {
@@ -116,7 +105,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.collectionView.dataSource = self
             cell.collectionView.register(CastCollectionViewCell.self, forCellWithReuseIdentifier: CastCollectionViewCell.identifier)
             cell.collectionView.tag = indexPath.row
-            cell.collectionView.isScrollEnabled = true
+            cell.collectionView.backgroundColor = .clear
             
             return cell
         }
@@ -124,12 +113,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             return 240
-        } else if indexPath.row == 1 {
+        } else if indexPath.section == 1 {
             return 200
+        } else if indexPath.section == 2 {
+            return 0
         } else {
-            return 250
+            return 240
         }
     }
 }
@@ -145,9 +136,9 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CastCollectionViewCell.identifier, for: indexPath) as! CastCollectionViewCell
         
         let item = actorInfo[indexPath.item]
-        let baseURL = apiManager.imageBaseURL
-        if let imageURL = item.profile_path {
-            cell.actorImage.kf.setImage(with: URL(string: baseURL + imageURL))
+        if let url = item.profile_path {
+            let url = TMDBAPI.imageURL(imageURL: url).endpoint
+            cell.actorImage.kf.setImage(with: url)
         } else {
             cell.actorImage.image = UIImage(systemName: "person")
         }
