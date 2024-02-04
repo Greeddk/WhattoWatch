@@ -62,6 +62,7 @@ extension TVShowViewController {
         }
         
         
+        group.enter()
         imageGroup.notify(queue: .main) {
             self.showList[0].forEach {
                 group.enter()
@@ -71,6 +72,7 @@ extension TVShowViewController {
                     group.leave()
                 }
             }
+            group.leave()
         }
         
         group.enter()

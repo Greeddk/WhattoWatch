@@ -18,6 +18,7 @@ struct TVShow: Decodable {
     let poster_path: String?
 }
 
+
 struct ShowImage: Decodable {
     let id: Int
     let logos: [ShowLogo]
@@ -40,7 +41,18 @@ struct TVSeriesInfo: Decodable {
     let backdrop_path: String?
     let poster_path: String
     let name: String
-    let overview: String
+    let original_name: String
+    let overview: String?
+    let first_air_date: String
+    let last_air_date: String
+    let vote_average: Double
+    let genres: [Genre]
+    let number_of_episodes: Int
+    let number_of_seasons: Int
+    
+    var airDate: String {
+        return first_air_date + " ~ " + last_air_date
+    }
 }
 
 struct CastingInfo: Decodable {

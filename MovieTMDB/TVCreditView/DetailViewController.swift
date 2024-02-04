@@ -16,9 +16,9 @@ class DetailViewController: BaseViewController {
     let apiManager = TMDBAPIManager.shared
     
     var id: Int = 0
-    var seriesInfo = TVSeriesInfo(backdrop_path: "", poster_path: "", name: "", overview: "")
+    var seriesInfo = TVSeriesInfo(backdrop_path: "", poster_path: "", name: "", original_name: "", overview: "", first_air_date: "", last_air_date: "", vote_average: 0, genres: [], number_of_episodes: 0, number_of_seasons: 0)
     var actorInfo = [Actor(name: "", profile_path: "", roles: [])]
-    var recommendList = [TVShow(id: 0, name: "", poster_path: nil)]
+    var recommendList = [TVShow(id: 0, name: "", poster_path: "")]
     
     override func loadView() {
         self.view = mainView
@@ -36,6 +36,7 @@ class DetailViewController: BaseViewController {
         mainView.tableView.register(MediaOverviewTableViewCell.self, forCellReuseIdentifier: MediaOverviewTableViewCell.identifier)
         mainView.tableView.register(CastTableViewCell.self, forCellReuseIdentifier: CastTableViewCell.identifier)
         mainView.tableView.backgroundColor = .clear
+        mainView.tableView.estimatedRowHeight = 240
     }
     
     func callAPI() {
@@ -82,10 +83,25 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.backImageView.kf.setImage(with: TMDBAPI.imageURL(imageURL: seriesInfo.backdrop_path ?? "").endpoint)
             cell.poster.kf.setImage(with: TMDBAPI.imageURL(imageURL: seriesInfo.poster_path).endpoint)
             cell.mediaName.text = seriesInfo.name
+            cell.originName.text = seriesInfo.original_name
+            if seriesInfo.genres.count > 1 {
+                cell.genre.text = seriesInfo.genres[0].name + ", " + seriesInfo.genres[1].name
+            } else {
+                cell.genre.text = seriesInfo.genres.first?.name
+            }
+            cell.airDate.text = seriesInfo.airDate
+            cell.numberOfSeasons.text = String(describing: seriesInfo.number_of_seasons) + "개의 시즌"
+            cell.numberOfEpisodes.text = String(describing: seriesInfo.number_of_episodes) + "개의 에피소드"
+            let rate = String(format: "%.1f", seriesInfo.vote_average)
+            cell.rate.text = "★ \(rate)"
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: MediaOverviewTableViewCell.identifier, for: indexPath) as! MediaOverviewTableViewCell
-            cell.overviewLabel.text = seriesInfo.overview
+            if seriesInfo.overview != "" {
+                cell.overviewLabel.text = seriesInfo.overview
+            } else {
+                cell.overviewLabel.text = "줄거리가 없습니다!"
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier, for: indexPath) as! CastTableViewCell
@@ -104,7 +120,19 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             return 240
         } else if indexPath.row == 1 {
-            return 200
+            let text = seriesInfo.overview
+            
+            if text == "" {
+                return 80
+            } else {
+                let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: CGFloat.greatestFiniteMagnitude))
+                label.text = text
+                label.numberOfLines = 0
+                label.lineBreakMode = .byWordWrapping
+                label.sizeToFit()
+                return label.frame.height + 50
+            }
+            
         } else if indexPath.row == 2 {
             return 220
         }

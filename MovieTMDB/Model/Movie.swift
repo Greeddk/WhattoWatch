@@ -8,23 +8,23 @@
 import Foundation
 
 struct MovieRank: Codable {
-    var page: Int
-    var results: [Movie]
+    let page: Int
+    let results: [Movie]
 }
 
 struct Movie: Codable {
-    var poster_path: String
-    var backdrop_path: String
-    var title: String
-    var release_date: String
-    var overview: String
-    var vote_average: Double
-    var genre_ids: [Int]
+    let poster_path: String
+    let backdrop_path: String
+    let title: String
+    let release_date: String
+    let overview: String
+    let vote_average: Double
+    let genre_ids: [Int]
 }
 
-struct Genre {
-    var id: Int
-    var name: String
+struct Genre: Decodable {
+    let id: Int
+    let name: String
     
     static var genreList = [
         Genre(id: 28, name: "Action"),
