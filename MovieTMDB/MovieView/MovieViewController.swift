@@ -65,6 +65,7 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TrendTableViewCell.identifier, for: indexPath) as! TrendTableViewCell
         
+        cell.changeType()
         cell.view.configureCell(item: movieList[indexPath.row])
         
         return cell

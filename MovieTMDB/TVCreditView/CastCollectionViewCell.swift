@@ -35,11 +35,13 @@ class CastCollectionViewCell: BaseCollectionViewCell {
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(actorImage.snp.bottom).offset(2)
+            make.horizontalEdges.equalTo(contentView).inset(2)
             make.centerX.equalTo(contentView)
         }
         
         roleNameLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(2)
+            make.horizontalEdges.equalTo(contentView).inset(2)
             make.centerX.equalTo(contentView)
         }
     }
@@ -50,8 +52,10 @@ class CastCollectionViewCell: BaseCollectionViewCell {
         actorImage.layer.cornerRadius = 65
         nameLabel.font = .systemFont(ofSize: 14)
         nameLabel.textColor = .white
+        nameLabel.textAlignment = .center
         roleNameLabel.font = .systemFont(ofSize: 11)
         roleNameLabel.textColor = .lightGray
+        roleNameLabel.textAlignment = .center
     }
     
 }
