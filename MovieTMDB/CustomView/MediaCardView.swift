@@ -8,10 +8,15 @@
 import UIKit
 import SnapKit
 
+enum MediaType {
+    case TV
+    case Movie
+}
+
 class MediaCardView: BaseView {
     
     var isMovie: Bool = false
-    
+
     let releasedateLabel = UILabel()
     let genreLabel = UILabel()
     let backView = UIView()
@@ -33,15 +38,18 @@ class MediaCardView: BaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    convenience init(type: MediaType) {
+        self.init(frame: .zero)
+        isMovie = type == .Movie ? true : false
+    }
+    
     override func configureHierarchy() {
         addSubviews([releasedateLabel, genreLabel, backView, backShadowView])
         backView.addSubviews([posterImageView, rateTextLabel, rateLabel, titleLabel, descLabel, lineView, moreLabel, moreButton])
     }
     
-    override func configureLayout() {
-        
+    override func layoutSubviews() {
         if isMovie {
-            print(true)
             releasedateLabel.snp.makeConstraints { make in
                 make.top.equalTo(self).offset(8)
                 make.horizontalEdges.equalTo(self).inset(8)
@@ -57,13 +65,13 @@ class MediaCardView: BaseView {
             backView.snp.makeConstraints { make in
                 make.top.equalTo(genreLabel.snp.bottom).offset(4)
                 make.horizontalEdges.equalTo(self).inset(8)
-                make.bottom.equalTo(self).offset(8)
+                make.bottom.greaterThanOrEqualTo(self.safeAreaLayoutGuide).offset(-12)
             }
         } else {
             backView.snp.makeConstraints { make in
                 make.top.equalTo(self).offset(4)
                 make.horizontalEdges.equalTo(self).inset(8)
-                make.bottom.equalTo(self).offset(8)
+                make.bottom.greaterThanOrEqualTo(self).offset(-12)
             }
         }
   
@@ -104,7 +112,7 @@ class MediaCardView: BaseView {
         }
         
         lineView.snp.makeConstraints { make in
-            make.top.equalTo(descLabel.snp.bottom).offset(16)
+            make.top.equalTo(descLabel.snp.bottom).offset(8)
             make.horizontalEdges.equalTo(backView).inset(16)
             make.height.equalTo(1)
         }
@@ -112,7 +120,7 @@ class MediaCardView: BaseView {
         moreButton.snp.makeConstraints { make in
             make.top.equalTo(lineView).offset(8)
             make.trailing.equalTo(backView).offset(-16)
-            make.bottom.equalTo(backView).offset(-16)
+            make.bottom.lessThanOrEqualTo(backView).offset(-16)
             make.size.equalTo(24)
         }
         
@@ -128,12 +136,13 @@ class MediaCardView: BaseView {
         releasedateLabel.text = "sadfasdfasd"
         
         genreLabel.font = .boldSystemFont(ofSize: 16)
+        genreLabel.textColor = .white
         
         backView.clipsToBounds = true
         backView.layer.cornerRadius = 10
         backView.backgroundColor = .systemGray6
         
-        backShadowView.layer.shadowColor = UIColor.black.cgColor
+        backShadowView.layer.shadowColor = UIColor.white.cgColor
         backShadowView.layer.shadowOpacity = 1
         backShadowView.layer.shadowRadius = 5
         backShadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -169,7 +178,6 @@ class MediaCardView: BaseView {
     }
     
     func configureCell(item: TVShow) {
-        isMovie = false
         let url = TMDBAPI.imageURL(imageURL: item.backdrop_path ?? "").endpoint
         posterImageView.kf.setImage(with: url)
         
@@ -180,7 +188,6 @@ class MediaCardView: BaseView {
     }
     
     func configureCell(item: Movie) {
-        isMovie = true
         releasedateLabel.text = changeDateFormat(text: item.release_date)
         let genre = Genre.genreList.filter { $0.id == item.genre_ids[0] }
         genreLabel.text = "#\(genre[0].name)"

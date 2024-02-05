@@ -23,7 +23,6 @@ class TVShowViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        self.navigationController?.isNavigationBarHidden = true
         callAPI()
     }
     
@@ -42,6 +41,19 @@ class TVShowViewController: BaseViewController {
         tableView.dataSource = self
         tableView.register(TVShowTableViewCell.self, forCellReuseIdentifier: TVShowTableViewCell.identifier)
         tableView.backgroundColor = .clear
+        
+        navigationItem.title = "TV Contents"
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .done, target: self, action: #selector(searchButtonClicked))
+        
+        navigationItem.rightBarButtonItem = searchButton
+    }
+    
+    @objc
+    func searchButtonClicked() {
+        let vc = SearchViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -55,7 +67,7 @@ extension TVShowViewController {
         
         group.enter()
         imageGroup.enter()
-        apiManager.request(type: TVRank.self, api: .tvTopRatedURL) { show in
+        apiManager.request(type: TVData.self, api: .tvTopRatedURL) { show in
             self.showList[0] = show.results
             group.leave()
             imageGroup.leave()
@@ -76,13 +88,13 @@ extension TVShowViewController {
         }
         
         group.enter()
-        apiManager.request(type: TVRank.self, api: .tvPopularURL) { show in
+        apiManager.request(type: TVData.self, api: .tvPopularURL) { show in
             self.showList[1] = show.results
             group.leave()
         }
         
         group.enter()
-        apiManager.request(type: TVRank.self, api: .tvTrendURL) { show in
+        apiManager.request(type: TVData.self, api: .tvTrendURL) { show in
             self.showList[2] = show.results
             group.leave()
         }

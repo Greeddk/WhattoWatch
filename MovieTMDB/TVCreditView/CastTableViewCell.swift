@@ -28,7 +28,7 @@ class CastTableViewCell: BaseTableViewCell {
     override func configureLayout() {
         title.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(4)
-            make.leading.equalTo(contentView).offset(12)
+            make.leading.equalTo(contentView).offset(16)
         }
         
         collectionView.snp.makeConstraints { make in

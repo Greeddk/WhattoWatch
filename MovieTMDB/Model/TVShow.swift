@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TVRank: Decodable {
+struct TVData: Decodable {
     let page: Int
     let results: [TVShow]
 }

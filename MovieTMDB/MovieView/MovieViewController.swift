@@ -19,6 +19,7 @@ class MovieViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(true, forKey: "isMovie")
     }
     
     override func configureHierarchy() {
@@ -37,7 +38,7 @@ class MovieViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.rowHeight = 380
+        tableView.rowHeight = 400
         tableView.separatorStyle = .none
         
         tableView.register(TrendTableViewCell.self, forCellReuseIdentifier: TrendTableViewCell.identifier)
@@ -65,7 +66,6 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: TrendTableViewCell.identifier, for: indexPath) as! TrendTableViewCell
         
-        cell.changeType()
         cell.view.configureCell(item: movieList[indexPath.row])
         
         return cell

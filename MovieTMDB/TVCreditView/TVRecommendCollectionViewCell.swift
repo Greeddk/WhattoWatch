@@ -10,7 +10,7 @@ import SnapKit
 
 class TVRecommendCollectionViewCell: BaseCollectionViewCell {
     
-    let view = MediaCardView()
+    let view = MediaCardView(type: .TV)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

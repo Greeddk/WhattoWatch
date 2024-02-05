@@ -10,7 +10,7 @@ import Kingfisher
 
 class TrendTableViewCell: BaseTableViewCell {
     
-    let view = MediaCardView()
+    let view = MediaCardView(type: .Movie)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -29,10 +29,6 @@ class TrendTableViewCell: BaseTableViewCell {
         view.snp.makeConstraints { make in
             make.edges.equalTo(contentView)
         }
-    }
-    
-    func changeType() {
-        view.isMovie = true
     }
   
 }

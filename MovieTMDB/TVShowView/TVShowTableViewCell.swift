@@ -58,7 +58,7 @@ extension TVShowTableViewCell {
         
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
-        layout.itemSize = CGSize(width: cellWidth / 3, height: cellHeight / 4 )
+        layout.itemSize = CGSize(width: cellWidth / 3 + 5, height: cellHeight / 4 )
         layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
         layout.scrollDirection = .horizontal
         

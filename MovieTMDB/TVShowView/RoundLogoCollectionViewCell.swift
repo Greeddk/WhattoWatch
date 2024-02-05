@@ -32,6 +32,7 @@ class RoundLogoCollectionViewCell: BaseCollectionViewCell {
     }
     
     override func configureView() {
+        roundImage.contentMode = .scaleAspectFill
         logoImage.contentMode = .scaleAspectFit
     }
     

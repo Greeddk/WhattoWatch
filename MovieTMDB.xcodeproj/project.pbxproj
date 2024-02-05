@@ -21,6 +21,13 @@
 		4252002D2B6F9144009B6370 /* MediaCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252002C2B6F9144009B6370 /* MediaCardView.swift */; };
 		4252002F2B6FA9CE009B6370 /* TVRecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252002E2B6FA9CE009B6370 /* TVRecommendCollectionViewCell.swift */; };
 		425200312B6FABAC009B6370 /* TVRecommendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425200302B6FABAC009B6370 /* TVRecommendTableViewCell.swift */; };
+		425200532B70BD40009B6370 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 425200522B70BD40009B6370 /* SnapKit */; };
+		425200562B70BD46009B6370 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 425200552B70BD46009B6370 /* Alamofire */; };
+		425200592B70BD4B009B6370 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 425200582B70BD4B009B6370 /* Kingfisher */; };
+		4252005C2B70C0C4009B6370 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252005B2B70C0C4009B6370 /* SearchViewController.swift */; };
+		4252005E2B70D9D0009B6370 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252005D2B70D9D0009B6370 /* SearchView.swift */; };
+		425200622B70E14A009B6370 /* TMDBSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425200612B70E14A009B6370 /* TMDBSessionManager.swift */; };
+		426F59B22B7100420097A15A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F59B12B7100420097A15A /* SearchTableViewCell.swift */; };
 		42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E5E2B6911E500D79600 /* CodeBase.swift */; };
 		42A06E632B69129A00D79600 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E622B69129A00D79600 /* MainTabBarViewController.swift */; };
 		42A06E652B6913EE00D79600 /* TVShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E642B6913EE00D79600 /* TVShowViewController.swift */; };
@@ -42,11 +49,20 @@
 		42AE8FC92B625CC5008B0BD3 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE8FC82B625CC5008B0BD3 /* ReusableProtocol.swift */; };
 		42DE6E2C2B6D34D80047A2AE /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE6E2B2B6D34D80047A2AE /* CastCollectionViewCell.swift */; };
 		42DE6E302B6F4C160047A2AE /* TMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE6E2F2B6F4C160047A2AE /* TMDBAPI.swift */; };
-		42DE6E332B6F5FC30047A2AE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42DE6E322B6F5FC30047A2AE /* SnapKit */; };
-		42DE6E352B6F5FC30047A2AE /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 42DE6E342B6F5FC30047A2AE /* SnapKit-Dynamic */; };
-		42DE6E382B6F5FCB0047A2AE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42DE6E372B6F5FCB0047A2AE /* Alamofire */; };
-		42DE6E3B2B6F5FD10047A2AE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42DE6E3A2B6F5FD10047A2AE /* Kingfisher */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		425200382B70B91E009B6370 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4218CC332B6A243D00828F38 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +79,10 @@
 		4252002C2B6F9144009B6370 /* MediaCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCardView.swift; sourceTree = "<group>"; };
 		4252002E2B6FA9CE009B6370 /* TVRecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVRecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		425200302B6FABAC009B6370 /* TVRecommendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVRecommendTableViewCell.swift; sourceTree = "<group>"; };
+		4252005B2B70C0C4009B6370 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4252005D2B70D9D0009B6370 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		425200612B70E14A009B6370 /* TMDBSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBSessionManager.swift; sourceTree = "<group>"; };
+		426F59B12B7100420097A15A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		42A06E5E2B6911E500D79600 /* CodeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBase.swift; sourceTree = "<group>"; };
 		42A06E622B69129A00D79600 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		42A06E642B6913EE00D79600 /* TVShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowViewController.swift; sourceTree = "<group>"; };
@@ -93,10 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42DE6E3B2B6F5FD10047A2AE /* Kingfisher in Frameworks */,
-				42DE6E382B6F5FCB0047A2AE /* Alamofire in Frameworks */,
-				42DE6E332B6F5FC30047A2AE /* SnapKit in Frameworks */,
-				42DE6E352B6F5FC30047A2AE /* SnapKit-Dynamic in Frameworks */,
+				425200592B70BD4B009B6370 /* Kingfisher in Frameworks */,
+				425200532B70BD40009B6370 /* SnapKit in Frameworks */,
+				425200562B70BD46009B6370 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +141,16 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
+		4252005A2B70C09F009B6370 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				4252005B2B70C0C4009B6370 /* SearchViewController.swift */,
+				4252005D2B70D9D0009B6370 /* SearchView.swift */,
+				426F59B12B7100420097A15A /* SearchTableViewCell.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		42A06E5B2B6910D000D79600 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +166,7 @@
 				42AE8FBF2B6252B3008B0BD3 /* APIKey.swift */,
 				42AE8FB92B625161008B0BD3 /* TMDBAPIManager.swift */,
 				42DE6E2F2B6F4C160047A2AE /* TMDBAPI.swift */,
+				425200612B70E14A009B6370 /* TMDBSessionManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -211,8 +241,9 @@
 				42AE8FB32B624FA7008B0BD3 /* MovieView */,
 				42AE8FB42B624FC0008B0BD3 /* TVCreditView */,
 				425200322B6FC878009B6370 /* CustomView */,
-				42AE8FAA2B624EA5008B0BD3 /* LaunchScreen.storyboard */,
+				4252005A2B70C09F009B6370 /* SearchView */,
 				42AE8FA82B624EA5008B0BD3 /* Assets.xcassets */,
+				42AE8FAA2B624EA5008B0BD3 /* LaunchScreen.storyboard */,
 				42AE8FAD2B624EA5008B0BD3 /* Info.plist */,
 			);
 			path = MovieTMDB;
@@ -252,6 +283,7 @@
 				42AE8F982B624EA3008B0BD3 /* Sources */,
 				42AE8F992B624EA3008B0BD3 /* Frameworks */,
 				42AE8F9A2B624EA3008B0BD3 /* Resources */,
+				425200382B70B91E009B6370 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -259,10 +291,9 @@
 			);
 			name = MovieTMDB;
 			packageProductDependencies = (
-				42DE6E322B6F5FC30047A2AE /* SnapKit */,
-				42DE6E342B6F5FC30047A2AE /* SnapKit-Dynamic */,
-				42DE6E372B6F5FCB0047A2AE /* Alamofire */,
-				42DE6E3A2B6F5FD10047A2AE /* Kingfisher */,
+				425200522B70BD40009B6370 /* SnapKit */,
+				425200552B70BD46009B6370 /* Alamofire */,
+				425200582B70BD4B009B6370 /* Kingfisher */,
 			);
 			productName = MovieTMDB;
 			productReference = 42AE8F9C2B624EA3008B0BD3 /* MovieTMDB.app */;
@@ -293,9 +324,9 @@
 			);
 			mainGroup = 42AE8F932B624EA3008B0BD3;
 			packageReferences = (
-				42DE6E312B6F5FC30047A2AE /* XCRemoteSwiftPackageReference "SnapKit" */,
-				42DE6E362B6F5FCB0047A2AE /* XCRemoteSwiftPackageReference "Alamofire" */,
-				42DE6E392B6F5FD10047A2AE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				425200512B70BD40009B6370 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				425200542B70BD46009B6370 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				425200572B70BD4B009B6370 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 42AE8F9D2B624EA3008B0BD3 /* Products */;
 			projectDirPath = "";
@@ -330,12 +361,16 @@
 				42AE8FA42B624EA3008B0BD3 /* MovieViewController.swift in Sources */,
 				42DE6E2C2B6D34D80047A2AE /* CastCollectionViewCell.swift in Sources */,
 				42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */,
+				4252005E2B70D9D0009B6370 /* SearchView.swift in Sources */,
 				42A06E752B69276E00D79600 /* TVShow.swift in Sources */,
 				42DE6E302B6F4C160047A2AE /* TMDBAPI.swift in Sources */,
+				426F59B22B7100420097A15A /* SearchTableViewCell.swift in Sources */,
 				42AE8FA02B624EA3008B0BD3 /* AppDelegate.swift in Sources */,
 				4218CC362B6A244C00828F38 /* BaseTableViewCell.swift in Sources */,
 				42A06E682B6917AB00D79600 /* TVShowCollectionViewCell.swift in Sources */,
+				425200622B70E14A009B6370 /* TMDBSessionManager.swift in Sources */,
 				42A06E632B69129A00D79600 /* MainTabBarViewController.swift in Sources */,
+				4252005C2B70C0C4009B6370 /* SearchViewController.swift in Sources */,
 				42AE8FC92B625CC5008B0BD3 /* ReusableProtocol.swift in Sources */,
 				4218CC342B6A243D00828F38 /* BaseViewController.swift in Sources */,
 				42AE8FA22B624EA3008B0BD3 /* SceneDelegate.swift in Sources */,
@@ -425,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -482,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -502,11 +537,13 @@
 				DEVELOPMENT_TEAM = HR74YJR7W4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieTMDB/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,11 +570,13 @@
 				DEVELOPMENT_TEAM = HR74YJR7W4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieTMDB/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TMDB;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,7 +617,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		42DE6E312B6F5FC30047A2AE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		425200512B70BD40009B6370 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -586,7 +625,7 @@
 				minimumVersion = 5.7.0;
 			};
 		};
-		42DE6E362B6F5FCB0047A2AE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		425200542B70BD46009B6370 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -594,7 +633,7 @@
 				minimumVersion = 5.8.1;
 			};
 		};
-		42DE6E392B6F5FD10047A2AE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		425200572B70BD4B009B6370 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
@@ -605,24 +644,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		42DE6E322B6F5FC30047A2AE /* SnapKit */ = {
+		425200522B70BD40009B6370 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 42DE6E312B6F5FC30047A2AE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 425200512B70BD40009B6370 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		42DE6E342B6F5FC30047A2AE /* SnapKit-Dynamic */ = {
+		425200552B70BD46009B6370 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 42DE6E312B6F5FC30047A2AE /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-		42DE6E372B6F5FCB0047A2AE /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42DE6E362B6F5FCB0047A2AE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 425200542B70BD46009B6370 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		42DE6E3A2B6F5FD10047A2AE /* Kingfisher */ = {
+		425200582B70BD4B009B6370 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 42DE6E392B6F5FD10047A2AE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 425200572B70BD4B009B6370 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

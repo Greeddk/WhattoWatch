@@ -19,6 +19,7 @@ enum TMDBAPI {
     case movieCreditURL(id: Int)
     case tvLogoURL(id: Int)
     case imageURL(imageURL: String)
+    case tvSearchURL(query: String)
     
     var headers: HTTPHeaders {
         return ["Authorization": APIKey.tmdb]
@@ -50,6 +51,8 @@ enum TMDBAPI {
             return [:]
         case .imageURL:
             return [:]
+        case .tvSearchURL(let query):
+            return ["language": "ko-KR", "query": query]
         }
     }
     
@@ -79,6 +82,8 @@ enum TMDBAPI {
             return URL(string: baseURL + "/tv/\(id)/images")!
         case .imageURL(let imageURL):
             return URL(string: "https://image.tmdb.org/t/p/w500" + imageURL)!
+        case .tvSearchURL(let query):
+            return URL(string: baseURL + "/search/tv?query=\(query)&language=ko-KR")!
         }
     }
 }

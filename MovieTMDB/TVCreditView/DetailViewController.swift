@@ -30,6 +30,7 @@ class DetailViewController: BaseViewController {
     }
     
     override func configureView() {
+        UserDefaults.standard.setValue(false, forKey: "isMovie")
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(MediaImageTableViewCell.self, forCellReuseIdentifier: MediaImageTableViewCell.identifier)
@@ -38,6 +39,14 @@ class DetailViewController: BaseViewController {
         mainView.tableView.register(TVRecommendTableViewCell.self, forCellReuseIdentifier: TVRecommendTableViewCell.identifier)
         mainView.tableView.backgroundColor = .clear
         mainView.tableView.estimatedRowHeight = 240
+        
+        let popAllViewButton = UIBarButtonItem(title: "홈으로", style: .done, target: self, action: #selector(popAllViewButtonClicked))
+        navigationItem.rightBarButtonItem = popAllViewButton
+    }
+    
+    @objc
+    func popAllViewButtonClicked() {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func callAPI() {
@@ -57,7 +66,7 @@ class DetailViewController: BaseViewController {
         }
         
         group.enter()
-        apiManager.request(type: TVRank.self, api: .tvRecommendURL(id: id)) { show in
+        apiManager.request(type: TVData.self, api: .tvRecommendURL(id: id)) { show in
             self.recommendList = show.results
             group.leave()
         }
@@ -190,10 +199,12 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let vc = DetailViewController()
-        vc.id = recommendList[indexPath.item].id
-        
-        navigationController?.pushViewController(vc, animated: true)
+        if collectionView.tag == 3 {
+            let vc = DetailViewController()
+            vc.id = recommendList[indexPath.item].id
+            
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
 }
