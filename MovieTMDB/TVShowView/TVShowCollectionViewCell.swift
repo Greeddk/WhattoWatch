@@ -27,7 +27,7 @@ class TVShowCollectionViewCell: BaseCollectionViewCell {
     
     override func configureView() {
         imageView.image = UIImage(systemName: "star")
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
     }
     
     override func configureLayout() {

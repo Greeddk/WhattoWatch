@@ -140,7 +140,7 @@ class MediaCardView: BaseView {
         
         backView.clipsToBounds = true
         backView.layer.cornerRadius = 10
-        backView.backgroundColor = .systemGray6
+        backView.backgroundColor = .white
         
         backShadowView.layer.shadowColor = UIColor.white.cgColor
         backShadowView.layer.shadowOpacity = 1
