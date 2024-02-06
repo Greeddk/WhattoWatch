@@ -41,6 +41,7 @@ class TVShowViewController: BaseViewController {
         tableView.dataSource = self
         tableView.register(TVShowTableViewCell.self, forCellReuseIdentifier: TVShowTableViewCell.identifier)
         tableView.backgroundColor = .clear
+        tableView.separatorStyle = .none
         
         navigationItem.title = "TV Contents"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
