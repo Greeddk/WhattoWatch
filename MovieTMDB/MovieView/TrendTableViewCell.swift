@@ -11,16 +11,7 @@ import Kingfisher
 class TrendTableViewCell: BaseTableViewCell {
     
     let view = MediaCardView(type: .Movie)
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureHierarchy() {
         contentView.addSubview(view)
     }

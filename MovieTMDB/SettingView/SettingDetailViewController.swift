@@ -28,7 +28,7 @@ class SettingDetailViewController: BaseViewController {
     }
     
     @objc
-    func commitButtonClicked() {
+    private func commitButtonClicked() {
         userTextFieldSpace?(mainView.userTextField.text!)
         navigationController?.popViewController(animated: true)
     }

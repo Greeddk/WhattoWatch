@@ -201,7 +201,7 @@ class MediaCardView: BaseView {
         descLabel.text = item.overview
     }
     
-    func changeDateFormat(text: String) -> String {
+    private func changeDateFormat(text: String) -> String {
         
         let originFormatter = DateFormatter()
         originFormatter.dateFormat = "yyyy-MM-dd"

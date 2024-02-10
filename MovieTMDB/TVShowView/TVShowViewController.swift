@@ -52,7 +52,7 @@ class TVShowViewController: BaseViewController {
     }
     
     @objc
-    func searchButtonClicked() {
+    private func searchButtonClicked() {
         let vc = SearchViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -61,7 +61,7 @@ class TVShowViewController: BaseViewController {
 
 extension TVShowViewController {
     
-    func callAPI() {
+    private func callAPI() {
         
         let group = DispatchGroup()
         let imageGroup = DispatchGroup()

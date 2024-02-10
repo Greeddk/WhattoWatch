@@ -45,11 +45,11 @@ class DetailViewController: BaseViewController {
     }
     
     @objc
-    func popAllViewButtonClicked() {
+    private func popAllViewButtonClicked() {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    func callAPI() {
+    private func callAPI() {
         
         let group = DispatchGroup()
 
