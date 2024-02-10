@@ -17,16 +17,10 @@ class BaseViewController: UIViewController, CodeBase {
         configureLayout()
     }
 
-    func configureHierarchy() {
-        
-    }
+    func configureHierarchy() { }
     
-    func configureView() {
-        
-    }
+    func configureView() { }
     
-    func configureLayout() {
-        
-    }
+    func configureLayout() { }
 
 }

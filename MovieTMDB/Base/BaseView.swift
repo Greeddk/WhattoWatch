@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class BaseView: UIView {
+class BaseView: UIView, CodeBase {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

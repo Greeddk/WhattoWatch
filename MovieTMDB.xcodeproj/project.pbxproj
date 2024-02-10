@@ -28,6 +28,10 @@
 		4252005E2B70D9D0009B6370 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252005D2B70D9D0009B6370 /* SearchView.swift */; };
 		425200622B70E14A009B6370 /* TMDBSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425200612B70E14A009B6370 /* TMDBSessionManager.swift */; };
 		426946DF2B76375C003B9C35 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426946DE2B76375C003B9C35 /* SettingViewController.swift */; };
+		426946E12B7749D1003B9C35 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426946E02B7749D1003B9C35 /* SettingView.swift */; };
+		426946E32B774FDD003B9C35 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426946E22B774FDD003B9C35 /* SettingTableViewCell.swift */; };
+		426946E52B775486003B9C35 /* SettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426946E42B775486003B9C35 /* SettingDetailViewController.swift */; };
+		426946E72B7757D7003B9C35 /* SettingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426946E62B7757D7003B9C35 /* SettingDetailView.swift */; };
 		426F59B22B7100420097A15A /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F59B12B7100420097A15A /* SearchTableViewCell.swift */; };
 		42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E5E2B6911E500D79600 /* CodeBase.swift */; };
 		42A06E632B69129A00D79600 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A06E622B69129A00D79600 /* MainTabBarViewController.swift */; };
@@ -84,6 +88,10 @@
 		4252005D2B70D9D0009B6370 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		425200612B70E14A009B6370 /* TMDBSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBSessionManager.swift; sourceTree = "<group>"; };
 		426946DE2B76375C003B9C35 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		426946E02B7749D1003B9C35 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		426946E22B774FDD003B9C35 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		426946E42B775486003B9C35 /* SettingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailViewController.swift; sourceTree = "<group>"; };
+		426946E62B7757D7003B9C35 /* SettingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailView.swift; sourceTree = "<group>"; };
 		426F59B12B7100420097A15A /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		42A06E5E2B6911E500D79600 /* CodeBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBase.swift; sourceTree = "<group>"; };
 		42A06E622B69129A00D79600 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -153,12 +161,16 @@
 			path = SearchView;
 			sourceTree = "<group>";
 		};
-		426946DD2B763750003B9C35 /* Setting */ = {
+		426946DD2B763750003B9C35 /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
 				426946DE2B76375C003B9C35 /* SettingViewController.swift */,
+				426946E02B7749D1003B9C35 /* SettingView.swift */,
+				426946E22B774FDD003B9C35 /* SettingTableViewCell.swift */,
+				426946E42B775486003B9C35 /* SettingDetailViewController.swift */,
+				426946E62B7757D7003B9C35 /* SettingDetailView.swift */,
 			);
-			path = Setting;
+			path = SettingView;
 			sourceTree = "<group>";
 		};
 		42A06E5B2B6910D000D79600 /* Model */ = {
@@ -238,7 +250,6 @@
 		42AE8F9E2B624EA3008B0BD3 /* MovieTMDB */ = {
 			isa = PBXGroup;
 			children = (
-				426946DD2B763750003B9C35 /* Setting */,
 				4218CC2E2B6A16D400828F38 /* Base */,
 				42A06E612B69124900D79600 /* Data */,
 				42A06E5B2B6910D000D79600 /* Model */,
@@ -246,15 +257,16 @@
 				42A06E602B69123000D79600 /* Extension */,
 				42A06E5C2B6911BC00D79600 /* Network */,
 				42A06E662B69157700D79600 /* TVShowView */,
-				42AE8F9F2B624EA3008B0BD3 /* AppDelegate.swift */,
-				42AE8FA12B624EA3008B0BD3 /* SceneDelegate.swift */,
 				42A06E622B69129A00D79600 /* MainTabBarViewController.swift */,
 				42AE8FB32B624FA7008B0BD3 /* MovieView */,
 				42AE8FB42B624FC0008B0BD3 /* TVCreditView */,
 				425200322B6FC878009B6370 /* CustomView */,
 				4252005A2B70C09F009B6370 /* SearchView */,
-				42AE8FA82B624EA5008B0BD3 /* Assets.xcassets */,
+				426946DD2B763750003B9C35 /* SettingView */,
 				42AE8FAA2B624EA5008B0BD3 /* LaunchScreen.storyboard */,
+				42AE8FA12B624EA3008B0BD3 /* SceneDelegate.swift */,
+				42AE8F9F2B624EA3008B0BD3 /* AppDelegate.swift */,
+				42AE8FA82B624EA5008B0BD3 /* Assets.xcassets */,
 				42AE8FAD2B624EA5008B0BD3 /* Info.plist */,
 			);
 			path = MovieTMDB;
@@ -372,6 +384,7 @@
 				42AE8FA42B624EA3008B0BD3 /* MovieViewController.swift in Sources */,
 				42DE6E2C2B6D34D80047A2AE /* CastCollectionViewCell.swift in Sources */,
 				42A06E5F2B6911E500D79600 /* CodeBase.swift in Sources */,
+				426946E72B7757D7003B9C35 /* SettingDetailView.swift in Sources */,
 				4252005E2B70D9D0009B6370 /* SearchView.swift in Sources */,
 				42A06E752B69276E00D79600 /* TVShow.swift in Sources */,
 				42DE6E302B6F4C160047A2AE /* TMDBAPI.swift in Sources */,
@@ -386,7 +399,9 @@
 				426946DF2B76375C003B9C35 /* SettingViewController.swift in Sources */,
 				4218CC342B6A243D00828F38 /* BaseViewController.swift in Sources */,
 				42AE8FA22B624EA3008B0BD3 /* SceneDelegate.swift in Sources */,
+				426946E52B775486003B9C35 /* SettingDetailViewController.swift in Sources */,
 				4218CC472B6A61DD00828F38 /* MediaOverviewTableViewCell.swift in Sources */,
+				426946E32B774FDD003B9C35 /* SettingTableViewCell.swift in Sources */,
 				4218CC492B6A620B00828F38 /* CastTableViewCell.swift in Sources */,
 				4218CC382B6A245700828F38 /* BaseCollectionViewCell.swift in Sources */,
 				4218CC432B6A609900828F38 /* DetailViewController.swift in Sources */,
@@ -395,6 +410,7 @@
 				42AE8FC22B6254F8008B0BD3 /* UserDefaultsManager.swift in Sources */,
 				4252002F2B6FA9CE009B6370 /* TVRecommendCollectionViewCell.swift in Sources */,
 				42A06E6F2B69191400D79600 /* UIView+Extension.swift in Sources */,
+				426946E12B7749D1003B9C35 /* SettingView.swift in Sources */,
 				42AE8FBA2B625161008B0BD3 /* TMDBAPIManager.swift in Sources */,
 				42AE8FC02B6252B3008B0BD3 /* APIKey.swift in Sources */,
 				42AE8FC42B625611008B0BD3 /* Movie.swift in Sources */,
